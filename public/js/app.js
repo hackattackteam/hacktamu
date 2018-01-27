@@ -1,34 +1,45 @@
 //global map variable
 var map;
 //AMD require statement to all in the classes that we be used from the API.  More info at: https://dojotoolkit.org/documentation/tutorials/1.10/modules/
-require([
+ require([
   "esri/Map",
   "esri/views/SceneView",
+  "esri/layers/Layer",
   "dojo/domReady!"
-  ],
-  function(
-    Map,
-    SceneView
-  ) {
+], function(
+  Map, SceneView, Layer
+) {
 
-  // Create the Map
   var map = new Map({
-    basemap: "streets"
+    basemap: "gray"
   });
 
-  // Create the SceneView
   var view = new SceneView({
-      container: "mapDiv",
-      map: map
+    map: map,
+    container: "mapDiv",
+    zoom: 7,
+    center: [-87, 34]
   });
 
-  // Creates a layer from a Portal layer item id
+  /************************************************
+   *
+   * Create a layer from an existing Portal item hosted
+   * in ArcGIS Online using the ID of the item.
+   *
+   *************************************************/
   Layer.fromPortalItem({
-    portalItem: {
-      id: "4e435a3537b34f4290f3a726d86e9458"
-    }
-  }).then(function(lyr){
-    // Adds layer to the map
+      portalItem: { // autocasts as new PortalItem()
+        id: "4e435a3537b34f4290f3a726d86e9458"
+      }
+    }).then(addLayer)
+    .otherwise(rejection);
+
+  // Adds the layer to the map once it loads
+  function addLayer(lyr) {
     map.add(lyr);
-  });
+  }
+
+  function rejection(err) {
+    console.log("Layer failed to load: ", err);
+  }
 });
