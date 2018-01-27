@@ -1,7 +1,5 @@
 <template>
   <div class="hello">
-    <h1>Preston's Weird GIS App</h1>
-    <router-link to="/Main"><button class="button">Enter</button></router-link>
     <h2>About [AppNameHere]</h2>
     <span>
       <p>Insert Desc. here</p>
@@ -17,10 +15,6 @@
   background-color: #41b882;
   padding: 15px 30px;
   transition: all 0.2s ease-in-out;
-}
-
-a {
-  color: white;
 }
 
 .button:hover {
