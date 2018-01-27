@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <button class="button">Enter</button>
+    <h1>Preston's Weird GIS App</h1>
+    <button class="button" v-on:click="enter">Enter</button>
     <h2>About [AppNameHere]</h2>
     <span>
       <p>Insert Desc. here</p>
@@ -12,6 +12,11 @@
 <script>
 export default {
   name: 'welcome',
+  methods: {
+    enter: function () {
+      alert('Redirect to main application page with this button.')
+    }
+  },
   data () {
     return {
       msg: 'Preston\'s Weird GIS App'
