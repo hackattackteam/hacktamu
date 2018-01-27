@@ -31,7 +31,7 @@ export default {
 }
 
 .button:hover {
-  background-color: lightgray;
+  background-color: lightgreen;
   color: white;
   box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
 }

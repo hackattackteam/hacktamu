@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <img src="./assets/gerrymander_big.png">
     <router-view/>
   </div>
 </template>
