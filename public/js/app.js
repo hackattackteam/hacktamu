@@ -19,12 +19,9 @@ function aboutPage() {
 }
 
 function mapPage() {
-  console.log('map displayed');
-  console.log(document.querySelector("#map-page").style.display);
   document.querySelector("#landing-page").style.display = "none";
   document.querySelector("#about-page").style.display = "none";
   document.querySelector("#map-page").style.display = "";
-  console.log(document.querySelector("#map-page").style.display);
 
   document.querySelector("#home-li").classList.remove('active');
   document.querySelector("#about-li").classList.remove('active');
