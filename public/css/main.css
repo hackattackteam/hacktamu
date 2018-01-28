@@ -28,10 +28,13 @@ html, body, div {
   padding: 0;
   height: 100%;
   width: 100%;
+  align-items: flex-end;
+  background-color: #fefaef;
 }
 
 #map-page {
-  width: 80%;
-  height: 80%;
-  padding-left: 2%;
+  width: 70%;
+  height: 70%;
+  margin: 5%;
+  padding: 3%;
 }
