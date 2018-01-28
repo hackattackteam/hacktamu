@@ -6,9 +6,13 @@ html, body {
 }
 
 .ui-wrap.container {
-  width: 400px;
-  height: 300px;
-  margin-top: 23%;
+  font-size: 100%;
+  max-width: 400px;
+  min-width: 200px;
+  max-height: 600px;
+  min-height: 90px
+  margin-top: 40%;
+  margin-left: 5%;
   margin-right: 200px;
   background: white;
   box-shadow: 0px 0px 8px #aeaeae;

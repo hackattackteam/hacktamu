@@ -44,7 +44,7 @@
     // method that we will use to update the control based on feature properties passed
     info.update = function (props) {
         this._div.innerHTML =
-        "<div class='container ui-wrap'id='Information'><br><br>"
+        "<div class='container ui-wrap'id='Information'>"
         +"<h2 style='font-family:verdana; font-size:200%; text-align:center'>"
         +"The Fantastical MCMC Approach to Gerrymandering</h2>"
         +"<hr style='border-width: 5px; border-color:black;'>"
@@ -162,6 +162,6 @@
       targetDistricts[idx]["District"] = max;
     }
 
-  }, 500);
+  }, 250);
 
 })();
