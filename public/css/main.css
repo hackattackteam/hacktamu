@@ -33,8 +33,14 @@ h1, h2 {
   margin-top: 0 auto !important;
 }
 
-p {
+#about-page {
   text-align: center;
+  margin: 3%;
+  border-color: #500000;
+  border-radius: 10px;
+  border-style: solid;
+  padding: 0px 50px 10px;
+  font-size: 18px;
 }
 
 .content {
