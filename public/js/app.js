@@ -49,6 +49,7 @@
         +"The Fantastical MCMC Approach to Gerrymandering</h2>"
         +"<hr style='border-width: 5px; border-color:black;'>"
         +"<p id='update' style='border: 2px solid; border-radius: 30px'/>"
+        +"<div class='title_image'><img src='../images/background.jpg'/></div>"
         +"</div>";
     };
     info.addTo(map);
@@ -145,7 +146,7 @@
       pastTotalP = totalP;
 
       document.getElementById("update").innerHTML =
-      "<h4 style='font-family:verdana;text-align:center;' id='update'>Polsby Popper Score:<br>"+totalP+"</h4>";
+      "<h4 style='font-family:verdana;text-align:center;' id='update'>Polsby-Popper Score:<br>"+totalP+"</h4>";
 
       console.log(pastTotalP);
       console.log(targetDistricts[idx].geometry.coordinates[0]);
