@@ -3,6 +3,10 @@
   var geojson = {};
   var isRunOnce = false;
 
+  map.touchZoom.disable();
+  map.doubleClickZoom.disable();
+  map.scrollWheelZoom.disable();
+  map.boxZoom.disable();
 
   function highlightFeature(e) {
     var layer = e.target;
@@ -133,9 +137,9 @@
       }
     });
 
-    idx = Math.floor(Math.random() * Math.floor(targetDistricts.length)) + 1
+    idx = Math.floor(Math.random() * Math.floor(518)) + 1
     targetDistricts[idx]["District"] = min;
-
+    idx = idx - 1;
     if (pastTotalP < totalP) {
       console.log("flipped district.");
       pastTotalP = totalP;
@@ -148,10 +152,10 @@
       L.polygon(targetDistricts[idx].geometry.coordinates[0].map(function(x){
           return [x[1],x[0]]
       }),{
-                 color:(targetDistricts[idx]["District"] == 1) ? "#00ff00"
-                  : (targetDistricts[idx]["District"] === 2) ? "#ff0000"
-                  : (targetDistricts[idx]["District"] === 3) ? "#0000ff"
-                  : (targetDistricts[idx]["District"] === 4) ? "#6700aa" : "#000000",
+                 color:(targetDistricts[idx]["District"] == 1) ? "#007700" 
+                  : (targetDistricts[idx]["District"] === 2) ? "#770000" 
+                  : (targetDistricts[idx]["District"] === 3) ? "#000077"
+                  : (targetDistricts[idx]["District"] === 4) ? "#6700aa" : "#000000", 
              }).addTo(map)
     } else {
       targetDistricts[idx]["District"] = max;
