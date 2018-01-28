@@ -28,7 +28,7 @@
     });
   }
 
-  function attachGui() {  
+  function attachGui() {
     var info = L.control();
 
     info.onAdd = function (map) {
@@ -39,8 +39,8 @@
 
     // method that we will use to update the control based on feature properties passed
     info.update = function (props) {
-        this._div.innerHTML = 
-        "<div class='container ui-wrap'>"
+        this._div.innerHTML =
+        "<div class='container ui-wrap' id='update'>"
         +"<p>"+""+"</p>"
         +"</div>";
     };
@@ -52,11 +52,11 @@
       fillColor: (function() {
         // if(!isRunOnce) {
           feature["District"] = Math.floor(Math.random() * Math.floor(4)) + 1;
-          return (feature["District"] == 1) ? "#00ff00" 
-                  : (feature["District"] === 2) ? "#ff0000" 
+          return (feature["District"] == 1) ? "#00ff00"
+                  : (feature["District"] === 2) ? "#ff0000"
                   : (feature["District"] === 3) ? "#0000ff"
                   : (feature["District"] === 4) ? "#6700aa" : "#000000";
-        // } else { 
+        // } else {
         //   isRunOnce = true;
         // }
       })(),
@@ -66,7 +66,7 @@
       dashArray: '3',
       fillOpacity: 0.7
     }
-  } 
+  }
 
   geojson = L.geoJson(window.data, {
     style: style,
@@ -75,10 +75,10 @@
 
   map.dragging.disable();
   attachGui();
-  
+
     console.log("calculating");
 
-  window.setInterval(function() {  
+  window.setInterval(function() {
     area1 = 0;
     area2 = 0;
     area3 = 0;
@@ -114,9 +114,9 @@
     polsby2 = (4*Math.PI*area2)/(Math.pow(perimeter2, 2));
     polsby3 = (4*Math.PI*area3)/(Math.pow(perimeter3, 2));
     polsby4 = (4*Math.PI*area4)/(Math.pow(perimeter4, 2));
-    
+
     totalP = polsby1+polsby2+polsby3+polsby4;
-    
+
     scores = [polsby1, polsby2, polsby3, polsby4];
     console.log(scores);
     max = scores.indexOf(Math.max(...scores)) + 1;
@@ -136,21 +136,22 @@
     if (pastTotalP < totalP) {
       console.log("flipped district.");
       pastTotalP = totalP;
+      document.getElementById("update").innerHTML = "Total P: " + totalP;
       console.log(pastTotalP);
-      console.log(targetDistricts[idx].geometry.coordinates[0]); 
+      console.log(targetDistricts[idx].geometry.coordinates[0]);
       //targetDistricts[idx].geometry.setStyle({fillColor: "#000"});
       L.polygon(targetDistricts[idx].geometry.coordinates[0].map(function(x){
           return [x[1],x[0]]
       }),{
-                 color:(targetDistricts[idx]["District"] == 1) ? "#00ff00" 
-                  : (targetDistricts[idx]["District"] === 2) ? "#ff0000" 
+                 color:(targetDistricts[idx]["District"] == 1) ? "#00ff00"
+                  : (targetDistricts[idx]["District"] === 2) ? "#ff0000"
                   : (targetDistricts[idx]["District"] === 3) ? "#0000ff"
-                  : (targetDistricts[idx]["District"] === 4) ? "#6700aa" : "#000000", 
+                  : (targetDistricts[idx]["District"] === 4) ? "#6700aa" : "#000000",
              }).addTo(map)
     } else {
       targetDistricts[idx]["District"] = max;
     }
 
-  }, 2000);
+  }, 10);
 
 })();
