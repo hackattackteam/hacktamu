@@ -146,7 +146,7 @@
       pastTotalP = totalP;
 
       document.getElementById("update").innerHTML =
-      "<h4 style='font-family:verdana;text-align:center;' id='update'>Polsby Popper Score:<br>"+totalP+"</h4>";
+      "<h4 style='font-family:verdana;text-align:center;' id='update'>Polsby-Popper Score:<br>"+totalP+"</h4>";
 
       console.log(pastTotalP);
       console.log(targetDistricts[idx].geometry.coordinates[0]);
