@@ -40,15 +40,18 @@
     // method that we will use to update the control based on feature properties passed
     info.update = function (props) {
         this._div.innerHTML =
-        "<div class='container ui-wrap' id='update'>"
-        +"<p>"+""+"</p>"
+        "<div class='container ui-wrap'id='Title'>"
+        +"<h2>The Fantastical MCMC Approach to Gerrymandering</h2>"
+        +"<h3 style='font-family:verdana; font-size:300%; text-align:center'>"
+        +"hello world </h3>"
+        +"<p>Polsby Popper Score:</p><p id='update'/>"
         +"</div>";
     };
     info.addTo(map);
   }
 
   function style(feature) {
-    return {
+     return {
       fillColor: (function() {
         // if(!isRunOnce) {
           feature["District"] = Math.floor(Math.random() * Math.floor(4)) + 1;
@@ -136,7 +139,9 @@
     if (pastTotalP < totalP) {
       console.log("flipped district.");
       pastTotalP = totalP;
-      document.getElementById("update").innerHTML = "Total P: " + totalP;
+
+      document.getElementById("update").innerHTML = totalP;
+
       console.log(pastTotalP);
       console.log(targetDistricts[idx].geometry.coordinates[0]);
       //targetDistricts[idx].geometry.setStyle({fillColor: "#000"});
@@ -152,6 +157,6 @@
       targetDistricts[idx]["District"] = max;
     }
 
-  }, 10);
+  }, 500);
 
 })();
