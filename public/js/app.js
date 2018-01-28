@@ -1,5 +1,5 @@
 (function() {
-  var map = L.map('map', {zoomControl: false}, null).setView([47, -99], 6.8);
+  var map = L.map('map', {zoomControl: false}, null).setView([47.5, -98], 6.8);
   var geojson = {};
   var isRunOnce = false;
 

@@ -1,7 +1,8 @@
-html, body, #map {
-  position: relative;
-  width:100%;
+html, body {
+  padding: 0;
   height: 100%;
+  width: 100%;
+  align-items: flex-end;
 }
 
 .ui-wrap.container {
@@ -10,4 +11,41 @@ html, body, #map {
   background: white;
   box-shadow: 0px 0px 8px #aeaeae;
 
+}
+
+h1, h2 {
+  text-align: center;
+  margin-top: 0 auto !important;
+}
+
+p {
+  text-align: center;
+}
+
+.content {
+  margin-top: 0 auto !important;
+  background-color: #fefaef;
+}
+
+.navbar {
+  background-color: #500000 !important;
+  color: #FFFFFF;
+}
+
+.home {
+  background-image: url(../images/background.jpg);
+  background-size: 1300px;
+  background-repeat: no-repeat;
+  background-color: #fefaef;
+}
+
+body {
+  background-color: #fefaef;
+}
+
+#map {
+  height: 70%;
+  width: 95%;
+  margin: 3%;
+  padding: 3%;
 }
