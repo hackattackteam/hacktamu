@@ -3,6 +3,10 @@
   var geojson = {};
   var isRunOnce = false;
 
+  map.touchZoom.disable();
+  map.doubleClickZoom.disable();
+  map.scrollWheelZoom.disable();
+  map.boxZoom.disable();
 
   function highlightFeature(e) {
     var layer = e.target;
