@@ -1,9 +1,27 @@
 h1, h2 {
   text-align: center;
+  margin-top: 0 auto !important;
+}
+
+p {
+  text-align: center;
 }
 
 .content {
-  text-align: center;
+  margin-top: 0 auto !important;
+  background-color: #fefaef;
+}
+
+.navbar {
+  background-color: #500000 !important;
+  color: #FFFFFF;
+}
+
+.home {
+  background-image: url(../images/background.jpg);
+  background-size: 1300px;
+  background-repeat: no-repeat;
+  background-color: #fefaef;
 }
 
 html, body, div {
@@ -15,6 +33,5 @@ html, body, div {
 #map-page {
   width: 80%;
   height: 80%;
-  margin-right: 5%;
-  padding-left: 3%;
+  padding-left: 2%;
 }
