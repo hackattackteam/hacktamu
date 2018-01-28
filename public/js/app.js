@@ -49,6 +49,7 @@
         +"The Fantastical MCMC Approach to Gerrymandering</h2>"
         +"<hr style='border-width: 5px; border-color:black;'>"
         +"<p id='update' style='border: 2px solid; border-radius: 30px'/>"
+        +"<div class='title_image'><img src='../images/background.jpg'/></div>"
         +"</div>";
     };
     info.addTo(map);
