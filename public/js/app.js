@@ -1,5 +1,5 @@
 (function() {
-  var map = L.map('map', {zoomControl: false}, null).setView([47.5, -98], 6.8);
+  var map = L.map('map', {zoomControl: false}, null).setView([47, -99], 6.8);
   var geojson = {};
   var isRunOnce = false;
 
@@ -44,11 +44,13 @@
     // method that we will use to update the control based on feature properties passed
     info.update = function (props) {
         this._div.innerHTML =
-        "<div class='container ui-wrap'id='Title'>"
-        +"<h2>The Fantastical MCMC Approach to Gerrymandering</h2>"
-        +"<h3 style='font-family:verdana; font-size:300%; text-align:center'>"
-        +"hello world </h3>"
-        +"<p>Polsby Popper Score:</p><p id='update'/>"
+        "<div class='container ui-wrap'id='Information'>"
+        +"<h2 style='font-family:verdana; font-size:200%; text-align:center'>"
+        +"The Fantastical MCMC Approach to Gerrymandering</h2>"
+        +"<hr style='border-width: 3px'>"
+        +"<h4 style='font-family:verdana; text-align: center'>"
+        +"This application does this and that...</h4>"
+        +"<p id='update' style='border: 2px solid; border-radius: 3px'/>"
         +"</div>";
     };
     info.addTo(map);
@@ -144,7 +146,8 @@
       console.log("flipped district.");
       pastTotalP = totalP;
 
-      document.getElementById("update").innerHTML = totalP;
+      document.getElementById("update").innerHTML =
+      "<h4 style='font-family:verdana;text-align:center;' id='update'>Polsby Popper Score:<br>"+totalP+"</h4>";
 
       console.log(pastTotalP);
       console.log(targetDistricts[idx].geometry.coordinates[0]);
@@ -152,10 +155,10 @@
       L.polygon(targetDistricts[idx].geometry.coordinates[0].map(function(x){
           return [x[1],x[0]]
       }),{
-                 color:(targetDistricts[idx]["District"] == 1) ? "#007700" 
-                  : (targetDistricts[idx]["District"] === 2) ? "#770000" 
+                 color:(targetDistricts[idx]["District"] == 1) ? "#007700"
+                  : (targetDistricts[idx]["District"] === 2) ? "#770000"
                   : (targetDistricts[idx]["District"] === 3) ? "#000077"
-                  : (targetDistricts[idx]["District"] === 4) ? "#6700aa" : "#000000", 
+                  : (targetDistricts[idx]["District"] === 4) ? "#6700aa" : "#000000",
              }).addTo(map)
     } else {
       targetDistricts[idx]["District"] = max;
