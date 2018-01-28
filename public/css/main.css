@@ -7,7 +7,9 @@ html, body {
 
 .ui-wrap.container {
   width: 400px;
-  height: 500px;
+  height: 300px;
+  margin-top: 23%;
+  margin-right: 200px;
   background: white;
   box-shadow: 0px 0px 8px #aeaeae;
 

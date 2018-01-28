@@ -44,13 +44,11 @@
     // method that we will use to update the control based on feature properties passed
     info.update = function (props) {
         this._div.innerHTML =
-        "<div class='container ui-wrap'id='Information'>"
+        "<div class='container ui-wrap'id='Information'><br><br>"
         +"<h2 style='font-family:verdana; font-size:200%; text-align:center'>"
         +"The Fantastical MCMC Approach to Gerrymandering</h2>"
-        +"<hr style='border-width: 3px'>"
-        +"<h4 style='font-family:verdana; text-align: center'>"
-        +"This application does this and that...</h4>"
-        +"<p id='update' style='border: 2px solid; border-radius: 3px'/>"
+        +"<hr style='border-width: 5px; border-color:black;'>"
+        +"<p id='update' style='border: 2px solid; border-radius: 30px'/>"
         +"</div>";
     };
     info.addTo(map);
