@@ -5,7 +5,7 @@ require([
   "dojo/domReady!"
 ], function(Map, Layer, MapView){
   var map = new Map({
-    basemap: "streets"
+    
   });
 
   Layer.fromPortalItem({
