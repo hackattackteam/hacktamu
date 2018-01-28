@@ -1,5 +1,7 @@
 (function() {
   var map = L.map('map').setView([47, -99], 6.8);
+  map.createPane('pane');
+
   var geojson = {};
 
   var style = {
@@ -52,6 +54,8 @@
             '<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>'
             : 'Hover over a state');
     };
+
+    info.addTo(map);
   }
 
   geojson = L.geoJson(window.data, {
@@ -60,7 +64,4 @@
   }).addTo(map);
 
   map.dragging.disable();
-
-info.addTo(map);
-
 })();
