@@ -29,6 +29,9 @@ html, body, div {
   height: 100%;
   width: 100%;
   align-items: flex-end;
+}
+
+body {
   background-color: #fefaef;
 }
 
