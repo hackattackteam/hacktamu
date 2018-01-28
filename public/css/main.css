@@ -1,5 +1,45 @@
-html, body, #map {
+h1, h2 {
+  text-align: center;
+  margin-top: 0 auto !important;
+}
+
+p {
+  text-align: center;
+}
+
+.content {
+  margin-top: 0 auto !important;
+  background-color: #fefaef;
+}
+
+.navbar {
+  background-color: #500000 !important;
+  color: #FFFFFF;
+}
+
+.home {
+  background-image: url(../images/background.jpg);
+  background-size: 1300px;
+  background-repeat: no-repeat;
+  background-color: #fefaef;
+}
+
+html, body, div {
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  align-items: flex-end;
+  background-color: #fefaef;
+}
+#map {
   position: relative;
   width:100%;
   height: 100%;
+}
+
+#map-page {
+  width: 70%;
+  height: 70%;
+  margin: 5%;
+  padding: 3%;
 }
